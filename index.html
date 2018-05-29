@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>OIDC RP Site</title>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+    </head>
+    <body>
+        <div class="" id="main_wrapper">
+        <h2>Gigya OIDC - Single Page Demo RP Site</h2>
+
+
+        <div class="" id="loginBtnDiv">
+            <button class="rpBtn" id="loginBtn" />Login via Auth Code</button>
+        </div>
+
+        <br />
+        <script>
+            var newNonce=Date.now();
+            var redirectUrl = 'https://somedomain.com/loggedIn.php';
+            var apiKey = 'YOUR-API-KEY-HERE';
+            var clientId = 'YOUR-CLIENT-ID-HERE';
+            var authorizeEndpointLink="https://fidm.au1.gigya.com/oidc/op/v1.0/" + apiKey + "/authorize?client_id=" + clientId + "&response_type=code&redirect_uri=" + redirectUrl + "&scope=openid%20email%20profile&nonce=" + newNonce;
+
+            $(document).on("click", "#loginBtn", function() {
+              window.location=authorizeEndpointLink;
+            });
+        </script>
+        </div>
+    </body>
+</html>

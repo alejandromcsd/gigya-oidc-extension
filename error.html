@@ -1,0 +1,22 @@
+<html>
+<head>
+<title>OIDC Error Page</title>
+</head>
+<body>
+  <h2>Gigya OIDC OP Error Page</h2>
+  <div class="responseDiv" id="responseDiv" style="width: 95%; height: 50%; overflow: auto; text-align: left; margin: 0px auto;">
+  </div>
+
+  <script>
+      var thisUri = window.location.href;
+      var thisUriToDelete= window.location.protocol + "//" + window.location.hostname + "/error.html?";
+      var decodedUri = decodeURIComponent(thisUri);
+      decodedUri = decodedUri.replace(thisUriToDelete, "");
+      decodedUri = decodedUri.replace(/,/g, ",<br />&nbsp;&nbsp;&nbsp;&nbsp;");
+      decodedUri = decodedUri.replace(/{/g, "{<br />&nbsp;&nbsp;&nbsp;&nbsp;");
+      decodedUri = decodedUri.replace(/}/g, "<br />}");
+      decodedUri = decodedUri.replace(/&/g, "<br />");
+      document.getElementById('responseDiv').innerHTML = decodedUri;
+  </script>
+</body>
+</html>

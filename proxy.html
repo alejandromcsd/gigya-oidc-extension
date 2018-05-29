@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>Gigya OIDC - Single Page Demo RP Site</title>
+  <script type="text/javascript" lang="javascript" src="https://cdns.gigya.com/js/gigya.js?apiKey=YOUR-API-KEY-HERE"></script>
+  <script id="oidcExtension" type="text/javascript" lang="javascript" src="oidcExtension.js">
+    {
+      "apiKey": "YOUR-API-KEY-HERE",
+      "config": {
+        "loginURL": "#oidcUI=login",
+        "consentURL": "#oidcUI=consent",
+        "errorURL": "error.html"
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="container"></div>
+</body>
+</html>
